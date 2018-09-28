@@ -7,10 +7,13 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.QualifiedName;
 
 import kr.co.rtst.autosar.ap4x.core.nature.AdaptiveAutosarProjectNature;
 
 public class AdaptiveAutosarProjectUtil {
+	
+	public static final QualifiedName AUTOSAR_FILE_CORE_MODEL = new QualifiedName("kr.co.rtst.autosar.ap4x", "core.model");
 
 	public static final int[] DEFAULT_TOP_DIR_ORDER = {1, 2, 3};
 	public static final String[] DEFAULT_TOP_DIR = {"Software", "Service", "Machine"};
