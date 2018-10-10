@@ -14,5 +14,6 @@ Automatic-Module-Name: kr.co.rtst.autosar.ap45.core
 Bundle-ActivationPolicy: lazy
 Export-Package: kr.co.rtst.autosar.ap4x.core,
  kr.co.rtst.autosar.ap4x.core.artop,
+ kr.co.rtst.autosar.ap4x.core.model,
  kr.co.rtst.autosar.ap4x.core.nature,
  kr.co.rtst.autosar.ap4x.core.util
