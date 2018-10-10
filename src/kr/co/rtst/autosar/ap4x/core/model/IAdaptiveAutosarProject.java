@@ -17,14 +17,15 @@ public interface IAdaptiveAutosarProject {
 
 	public IProject getProject();
 
-	public ProjectTopElement getTypes();
+	public IAPTopElement getTypes();
 
-	public ProjectTopElement getApplications();
+	public IAPTopElement getApplications();
 
-	public ProjectTopElement getServices();
+	public IAPTopElement getServices();
 
-	public ProjectTopElement getMachines();
+	public IAPTopElement getMachines();
 	
+	public IAPTopElement[] getTopElements();
 
 
 	/**

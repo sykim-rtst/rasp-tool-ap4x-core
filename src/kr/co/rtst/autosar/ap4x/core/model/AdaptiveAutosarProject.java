@@ -5,37 +5,50 @@ import org.eclipse.core.resources.IProject;
 public class AdaptiveAutosarProject implements IAdaptiveAutosarProject{
 	
 	private final IProject project;
-	private final ProjectTopElement types;
-	private final ProjectTopElement applications;
-	private final ProjectTopElement services;
-	private final ProjectTopElement machines;
+	private final IAPTopElement types;
+	private final IAPTopElement applications;
+	private final IAPTopElement services;
+	private final IAPTopElement machines;
+	private final IAPTopElement[] topElements;
 	
 	public AdaptiveAutosarProject(IProject project) {
 		super();
 		this.project = project;
-		types = new ProjectTopElement("Types", "types");
-		applications = new ProjectTopElement("Applications", "applications");
-		services = new ProjectTopElement("Services", "services");
-		machines = new ProjectTopElement("Machines", "machines");
+		
+		types = new ProjectTopElement(this, "Types", "types");
+		applications = new ProjectTopElement(this, "Applications", "applications");
+		services = new ProjectTopElement(this, "Services", "services");
+		machines = new ProjectTopElement(this, "Machines", "machines");
+		
+		topElements = new IAPTopElement[4];
+		topElements[0] = types;
+		topElements[1] = applications;
+		topElements[2] = services;
+		topElements[3] = machines;
+	}
+	
+	@Override
+	public IAPTopElement[] getTopElements() {
+		return topElements;
 	}
 
 	public IProject getProject() {
 		return project;
 	}
 
-	public ProjectTopElement getTypes() {
+	public IAPTopElement getTypes() {
 		return types;
 	}
 
-	public ProjectTopElement getApplications() {
+	public IAPTopElement getApplications() {
 		return applications;
 	}
 
-	public ProjectTopElement getServices() {
+	public IAPTopElement getServices() {
 		return services;
 	}
 
-	public ProjectTopElement getMachines() {
+	public IAPTopElement getMachines() {
 		return machines;
 	}
 	
